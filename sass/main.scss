@@ -1,0 +1,24 @@
+@import './base/modern-normalize';
+
+@import './utils/variables';
+
+@import './base/common';
+@import './base/reset';
+
+@import './components/section';
+@import './components/container';
+@import './components/socials';
+@import './components/logo';
+@import './components/title';
+@import './components/menu';
+
+@import './layout/header';
+@import './layout/hero';
+@import './layout/advantages';
+@import './layout/offer';
+@import './layout/team';
+@import './layout/clients';
+@import './layout/portfolio';
+@import './layout/footer';
+
+@import './components/modal';

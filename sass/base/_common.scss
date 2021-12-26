@@ -1,0 +1,14 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  color: var(--general-text-color);
+}
+
+.link {
+  text-decoration: none;
+  transition: color 250ms var(--cubic-accent);
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
