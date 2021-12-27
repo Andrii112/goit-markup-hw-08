@@ -278,6 +278,10 @@ body {
   color: var(--general-text-color);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .link {
   text-decoration: none;
   transition: color 250ms var(--cubic-accent);
@@ -407,15 +411,33 @@ button {
 .logo {
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  font-size: 26px;
-  line-height: 1.19;
+  font-size: 24px;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--accent-color);
 }
 
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}
+
 .header__logo, .header__logo:hover, .header__logo:focus {
-  margin-right: 93px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (min-width: 768px) {
+  .header__logo, .header__logo:hover, .header__logo:focus {
+    margin-right: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__logo, .header__logo:hover, .header__logo:focus {
+    margin-right: 93px;
+  }
 }
 
 .logo--dark-color {
@@ -457,6 +479,12 @@ button {
   background-color: transparent;
 }
 
+@media screen and (min-width: 768px) {
+  .open-menu-button {
+    display: none;
+  }
+}
+
 .menu-container {
   position: fixed;
   background-color: #ffffff;
@@ -468,6 +496,7 @@ button {
 }
 
 .menu-container .container {
+  position: relative;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -478,13 +507,24 @@ button {
   padding-left: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: none;
+  }
+}
+
 .close-menu-button {
   position: absolute;
   display: block;
-  top: 10px;
-  right: 15px;
+  top: 17px;
+  right: 11px;
   border: none;
   background-color: transparent;
+}
+
+.close-menu-button:hover, .close-menu-button:focus {
+  fill: var(--accent-color);
+  outline: none;
 }
 
 .menu__item {
@@ -524,16 +564,48 @@ button {
 }
 
 .menu-social__item {
+  position: relative;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.22;
   letter-spacing: 0.02em;
+  margin-right: 10px;
   color: #2196f3;
+}
+
+.menu-social__item:not(:first-child) {
+  margin-left: 10px;
+}
+
+.menu-social__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  padding-bottom: 0;
+  margin-left: 10px;
+  width: 1px;
+  height: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
 .menu-social__list {
   display: flex;
   justify-content: flex-start;
+}
+
+.menu__link,
+.menu-social__link {
+  text-decoration: none;
+}
+
+.menu__link:visited,
+.menu-social__link:visited {
+  color: inherit;
+}
+
+.menu__link:hover, .menu__link:focus,
+.menu-social__link:hover,
+.menu-social__link:focus {
+  color: var(--accent-color);
 }
 
 .header {
@@ -544,8 +616,8 @@ button {
 
 @media screen and (min-width: 768px) {
   .header {
-    padding-top: 26px;
-    padding-bottom: 26px;
+    padding-top: 21px;
+    padding-bottom: 21px;
   }
 }
 
@@ -557,7 +629,6 @@ button {
 }
 
 .header__main-nav {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -568,7 +639,19 @@ button {
   align-items: center;
 }
 
-.header__item,
+.header__item {
+  margin-bottom: auto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header__item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .header__contacts {
   margin-bottom: auto;
   font-weight: 500;
@@ -578,9 +661,10 @@ button {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.header__item:not(:last-child),
-.header__contacts:not(:last-child) {
-  margin-right: 50px;
+@media screen and (min-width: 1200px) {
+  .header__contacts:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 .header__link {
@@ -605,12 +689,36 @@ button {
 }
 
 .header__list {
-  display: none;
   margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .header__list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__list {
+    display: flex;
+  }
 }
 
 .header__contacts a {
   color: var(--general-text-color);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .header__contacts:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .contact-details {
+    flex-direction: column;
+    margin-left: auto;
+  }
 }
 
 .mail.link,
@@ -1221,8 +1329,15 @@ button {
   top: 0;
   width: 100vw;
   height: 100vh;
+  overflow-y: scroll;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 250ms var(--cubic-accent), visibility 250ms var(--cubic-accent);
+}
+
+@media screen and (max-width: 479px) {
+  .backdrop {
+    padding: 93px 15px;
+  }
 }
 
 .backdrop.is-hidden .modal {
@@ -1231,20 +1346,53 @@ button {
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding-top: 40px;
   padding-bottom: 40px;
   padding-right: 40px;
   padding-left: 40px;
-  width: 528px;
-  min-height: 581px;
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms var(--cubic-accent);
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .modal {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .modal {
+    width: 450px;
+    margin-top: 93px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    min-height: 609px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 528px;
+    min-height: 581px;
+  }
 }
 
 .modal-closure {
@@ -1282,6 +1430,12 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-title {
+    line-height: 1.5;
+  }
 }
 
 .modal-form-field {
@@ -1372,6 +1526,12 @@ button {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: #757575;
+}
+
+@media screen and (min-width: 480px) {
+  .modal-policy {
+    white-space: nowrap;
+  }
 }
 
 .policy {
