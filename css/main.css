@@ -1209,15 +1209,24 @@ button {
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .footer .container {
   display: flex;
   align-items: baseline;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .footer__contacts {
-  margin-right: 70px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .address__item {
@@ -1246,7 +1255,8 @@ button {
 }
 
 .footer-socials {
-  margin-right: 93px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .socials__title,
@@ -1260,11 +1270,17 @@ button {
   color: var(--main-title-color);
 }
 
+.footer__subscription {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .subscription__field {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .subscription__input {
