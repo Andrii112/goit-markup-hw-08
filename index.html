@@ -13,7 +13,6 @@
 </head>
 <body>
     <header class="header">
-        
         <div class="container header__main-nav">
             <nav class="header__navigation">
                 <a href="" class="header__logo logo link">Web<span class="logo--dark-color">Studio</span></a>
@@ -38,12 +37,50 @@
                         </svg>
                         +38 096 111 11 11</a></li>
             </ul>
-            <button type="button" class="menu-button is-open">
+            <button type="button" class="open-menu-button">
                 <svg width="40" height="40" aria-label="Переключатель мобильного меню">
                     <use href="./images/icons.svg#icon-menu" class="icon-menu"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="menu-container is-hidden">
+            <button type="button" class="close-menu-button">
+                <svg width="40" height="40" aria-label="Переключатель мобильного меню">
                     <use href="./images/icons.svg#icon-closure" class="icon-close"></use>
                 </svg>
             </button>
+            <div class="container">
+                <div class="menu-top">
+                    <ul class="menu__list">
+                        <li class="menu__item"><a href="./index.html" class="link menu__link">Студия</a></li>
+                        <li class="menu__item"><a href="./portfolio.html" class="link menu__link">Портфолио</a></li>
+                        <li class="menu__item"><a href="" class="link menu__link">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="menu-bottom">
+                    <ul class="contacts__list">
+                        <li class="contacts__item">
+                            <a href="mailto:info@devstudio.com" class="contacts__mail link">info@devstudio.com</a>
+                        </li>
+                        <li class="contacts__item">
+                            <a href="tel:+380961111111" class="contacts__phone link">+38 096 111 11 11</a>
+                        </li>
+                    </ul>
+                    <ul class="menu-social__list social-list">
+                        <li class="menu-social__item">
+                            <a href="" class="menu-social__link link">Instagram</a>
+                        </li>
+                        <li class="menu-social__item">
+                            <a href="" class="menu-social__link link">Twitter</a>
+                        </li>
+                        <li class="menu-social__item">
+                            <a href="" class="menu-social__link link">Facebook</a>
+                        <li class="menu-social__item">
+                            <a href="" class="menu-social__link link">LinkedIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -523,6 +560,7 @@
             </form>
         </div>
     </div> -->
-    <!-- <script src="./js/modal.js"></script> -->
+    <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 </html>
