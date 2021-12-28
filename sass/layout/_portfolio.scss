@@ -10,11 +10,13 @@
 
 .filter__list {
   display: flex;
-  margin-right: -8px;
-  margin-top: -15px;
-
   flex-wrap: wrap;
   justify-content: flex-start;
+
+  @media screen and (max-width: 767px) {
+    margin-top: -15px;
+    margin-left: -8px;
+  }
 
   @media screen and (min-width: 768px) {
     flex-wrap: nowrap;
@@ -50,8 +52,15 @@
 }
 
 .filter__item {
-  margin-right: 8px;
-  margin-top: 15px;
+  @media screen and (max-width: 767px) {
+    margin-top: 15px;
+    margin-left: 8px;
+  }
+  @media screen and (min-width: 768px) {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
 }
 
 /* ---------------------------------------------------- */
@@ -64,20 +73,26 @@
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
+    margin-top: calc(-1 * var(--card-set-gap));
     margin-left: calc(-1 * var(--card-set-gap));
   }
 }
 
 .options__item {
-  margin-bottom: var(--card-set-gap);
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: var(--card-set-gap);
+    }
+  }
 
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 2 * var(--card-set-gap)) / 2);
+    flex-basis: calc(100% / 2 - var(--card-set-gap);
+    margin-top: var(--card-set-gap);
     margin-left: var(--card-set-gap);
   }
 
   @media screen and (min-width: 1200px) {
-    flex-basis: calc(100% / 3 - var(--card-set-gap));
+    flex-basis: calc(100% / 3 - var(--card-set-gap);
   }
 
   &:hover,

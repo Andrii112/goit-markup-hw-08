@@ -83,6 +83,9 @@
   letter-spacing: 0.02em;
 
   color: #2196f3;
+  @media screen and (max-width: 368px) {
+    font-size: 28px;
+  }
 }
 
 .contacts__phone {
@@ -104,28 +107,32 @@
 
   color: #2196f3;
 
-  &:not(:first-child) {
-    margin-left: 10px;
-  }
-
-  &:not(:last-child) {
-    &::after {
-      content: '';
-
-      position: absolute;
-      padding-bottom: 0;
+  @media screen and (min-width: 480px) {
+    &:not(:first-child) {
       margin-left: 10px;
+    }
 
-      width: 1px;
-      height: 100%;
-      border: 1px solid rgba(33, 33, 33, 0.2);
+    &:not(:last-child) {
+      &::after {
+        content: '';
+
+        position: absolute;
+        padding-bottom: 0;
+        margin-left: 10px;
+
+        width: 1px;
+        height: 100%;
+        border: 1px solid rgba(33, 33, 33, 0.2);
+      }
     }
   }
 }
 
 .menu-social__list {
-  display: flex;
-  justify-content: flex-start;
+  @media screen and (min-width: 480px) {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 .menu__link,
