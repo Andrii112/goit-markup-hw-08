@@ -12,6 +12,7 @@
 
   @media screen and (min-width: 1200px) {
     flex-wrap: nowrap;
+
   }
 }
 
@@ -27,7 +28,7 @@
       margin-bottom: var(--card-set-gap);          
     }
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     flex-basis: calc(100% / 2 - var(--card-set-gap);
     margin-top: var(--card-set-gap);
     margin-left: var(--card-set-gap);

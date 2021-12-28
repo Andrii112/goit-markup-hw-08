@@ -850,7 +850,7 @@ button {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .advantages__item {
     flex-basis: calc(100% / 2 - var(--card-set-gap));
     margin-top: var(--card-set-gap);
@@ -965,7 +965,7 @@ button {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .team-list__members {
     flex-basis: calc(100% / 2 - var(--card-set-gap));
     margin-top: var(--card-set-gap);
