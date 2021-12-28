@@ -1209,19 +1209,34 @@ button {
 .footer {
   padding-top: 60px;
   padding-bottom: 60px;
-  display: flex;
-  align-items: baseline;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
 }
 
 .footer .container {
   display: flex;
   align-items: baseline;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer .container {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
 }
 
 .footer__contacts {
@@ -1229,12 +1244,31 @@ button {
   margin-right: auto;
 }
 
+@media screen and (max-width: 1199px) {
+  .footer__contacts {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__contacts {
+    margin-right: 70px;
+    width: 100%;
+  }
+}
+
 .address__item {
   display: block;
 }
 
 .address__item:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 1200px) {
+  .address__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
 }
 
 .address__location,
@@ -1259,6 +1293,18 @@ button {
   margin-right: auto;
 }
 
+@media screen and (max-width: 1199px) {
+  .footer-socials {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-socials {
+    margin-right: 93px;
+  }
+}
+
 .socials__title,
 .subscription__title {
   margin-bottom: 20px;
@@ -1273,6 +1319,19 @@ button {
 .footer__subscription {
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .footer__subscription {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer__subscription {
+    margin-left: 0;
+  }
 }
 
 .subscription__field {
@@ -1283,12 +1342,19 @@ button {
   flex-direction: column;
 }
 
+@media screen and (min-width: 1200px) {
+  .subscription__field {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
 .subscription__input {
   position: relative;
-  width: 358px;
+  width: 100%;
   height: 50px;
   padding-left: 16px;
-  margin-right: 12px;
+  margin-bottom: 20px;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
@@ -1300,6 +1366,14 @@ button {
   line-height: 1.25;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (min-width: 1200px) {
+  .subscription__input {
+    width: 358px;
+    margin-right: 12px;
+    margin-bottom: 0;
+  }
 }
 
 .subscription__label {
