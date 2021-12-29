@@ -950,6 +950,7 @@ button {
 @media screen and (min-width: 1200px) {
   .team-list {
     flex-wrap: nowrap;
+    margin: 0;
   }
 }
 
@@ -1016,6 +1017,7 @@ button {
 @media screen and (min-width: 1200px) {
   .clients__list {
     flex-wrap: nowrap;
+    margin: 0;
   }
 }
 
